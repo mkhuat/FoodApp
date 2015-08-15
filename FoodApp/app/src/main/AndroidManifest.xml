@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.khmkau.codeu.foodapp" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PercentagesConsumptionActivity"
+            android:label="@string/consumption_detail_per" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ServingsConsumptionActivity"
+            android:label="@string/consumption_detail_ser" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".FridgeActivity"
+            android:label="@string/app_name" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".PercentagesNutritionActivity"
+            android:label="@string/nutrition_detail_per" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ListNutritionActivity"
+            android:label="@string/nutrition_detail_list" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Preferences"
+            android:label="@string/title_activity_settings" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".WasteActivity"
+            android:label="@string/activity_waste" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DisclaimerActivity"
+            android:label="@string/activity_disclaimer" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+        </activity>
+
+        <provider
+            android:name=".data.FoodProvider"
+            android:authorities="com.khmkau.codeu.foodapp.app" />
+
+        <activity
+            android:name=".InputMenuActivity"
+            android:label="@string/addFood"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ManualInputActivity"
+            android:label="@string/manual_input"
+            android:parentActivityName=".InputMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.InputMenuActivity" />
+        </activity>
+        <activity
+            android:name=".ExistingInputActivity"
+            android:label="@string/existing_input"
+            android:parentActivityName=".InputMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.InputMenuActivity" />
+        </activity>
+        <activity
+            android:name=".NutritionalDetailActivity"
+            android:label="Nutritional Detail"
+            android:parentActivityName=".FridgeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.FridgeActivity" />
+        </activity>
+        <activity
+            android:name=".ReceiptInputActivity"
+            android:label="@string/title_activity_receipt_input"
+            android:parentActivityName=".InputMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.khmkau.codeu.foodapp.InputMenuActivity" />
+        </activity>
+    </application>
+
+</manifest>

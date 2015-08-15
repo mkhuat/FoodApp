@@ -1,0 +1,451 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.khmkau.codeu.foodapp.ManualInputActivity">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+    <TableLayout
+        android:id="@+id/mainTable"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:paddingLeft="3dip"
+        android:paddingRight="3dip"
+        android:shrinkColumns="1"
+        android:stretchColumns="1">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/add_to_label" >
+            </TextView>
+
+            <Spinner
+                android:id="@+id/tableSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right" >
+            </Spinner>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/food_name_label" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true" >
+            </EditText>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/quantity_label" >
+            </TextView>
+
+        <LinearLayout
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/editQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:inputType="number">
+            </EditText>
+
+            <Spinner
+                android:id="@+id/quantitySpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="0">
+
+            </Spinner>
+        </LinearLayout>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/purchased_by_label" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editPurchasedBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:focusable="false">
+            </EditText>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/expires_by_label" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editExpiresBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:focusable="false">
+            </EditText>
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowConsumed"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/consumed_by_label" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editConsumedBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:focusable="false">
+            </EditText>
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowThrown"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/thrown_by_label" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editThrownBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:focusable="false">
+            </EditText>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/foodgroup_label" >
+            </TextView>
+
+            <Spinner
+                android:id="@+id/editFoodGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start" >
+            </Spinner>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/total_cost_label" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editTotalCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:inputType="numberDecimal">
+            </EditText>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/calories_label" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:inputType="number">
+            </EditText>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/total_fat_label" >
+            </TextView>
+            <LinearLayout>
+                <EditText
+                    android:id="@+id/editTotalFat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:inputType="number">
+                </EditText>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_weight="0"
+                    android:text="@string/grams" >
+                </TextView>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/saturated_fat_label" >
+            </TextView>
+
+            <LinearLayout>
+            <EditText
+                android:id="@+id/editSatFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:inputType="number">
+            </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/grams" >
+            </TextView>
+            </LinearLayout>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/trans_fat_label" >
+            </TextView>
+            <LinearLayout>
+            <EditText
+                android:id="@+id/editTransFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:inputType="number">
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/grams" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cholesterol_label" >
+            </TextView>
+            <LinearLayout>
+            <EditText
+                android:id="@+id/editCholesterol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:inputType="number">
+            </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0"
+                android:text="@string/milligrams" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/sodium_label" >
+            </TextView>
+
+            <LinearLayout>
+            <EditText
+                android:id="@+id/editSodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:inputType="number">
+            </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0"
+                android:text="@string/milligrams" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/total_carbs_label" >
+            </TextView>
+            <LinearLayout>
+            <EditText
+                android:id="@+id/editTotalCarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:inputType="number">
+            </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0"
+                android:text="@string/grams" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/sugar_label" >
+            </TextView>
+            <LinearLayout>
+            <EditText
+                android:id="@+id/editSugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:inputType="number">
+            </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0"
+                android:text="@string/grams" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/protein_label" >
+            </TextView>
+            <LinearLayout>
+            <EditText
+                android:id="@+id/editProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:inputType="number">
+            </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_weight="0"
+                android:text="@string/grams" />
+            </LinearLayout>
+        </TableRow>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/addButton"
+            android:id="@+id/addButton"
+            android:layout_gravity="center"
+            android:onClick="inputFood"
+            android:background="#bb9e9e9e"
+            android:layout_marginBottom="12dp"
+            android:textColor="#ffffffff" />
+
+    </TableLayout>
+
+
+    </ScrollView>
+</RelativeLayout>
